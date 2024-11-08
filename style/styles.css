@@ -1,4 +1,4 @@
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@ body {
     background-image: linear-gradient(45deg, rgb(95, 102, 102));
 }
 
-.container {
+.container{
     background-color: #9e8e8e;
     border-radius: 15px;
     padding: 20px;
@@ -32,7 +32,7 @@ body {
     margin: 10px 0;
     font-size: 1em;
 }
-div{
+.container_login{
     background-color: rgba(161, 129, 108, 0.9);
     position: absolute;
     top: 50%;

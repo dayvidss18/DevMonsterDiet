@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <div class="container_login">
         <h1>Login</h1>
         <input type="text" placeholder="E-mail">
         <br><br>
