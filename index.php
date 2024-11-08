@@ -20,16 +20,7 @@
     </div>
     <footer></footer>
     <?php
-        $nome = $_POST['nome'];
-        $idade = $_POST['idade'];
-        $peso = $_POST['peso'];
-        $altura = $_POST['altura'];
-        $email = $_POST['email'];
-        $imc = 0;
-
-
-
-        
+        $email = $_POST
     ?>  
 </body>
 </html>
