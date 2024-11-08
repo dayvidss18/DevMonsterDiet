@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <header>
+        <header class="">
             <a href="#"><img src="/images/logo.webp" alt="Logo imagem de um dinossauro" width="100px" heigth="100px"></a>
         </header>
         <main>
@@ -68,12 +68,14 @@
                 
                     <label for="observacoes">No seu fim de semana:</label>
                     <textarea id="observacoes" name="observacoes"></textarea>
-                    <input type="button" value="Cadastrar">
+                    <input type="button" value="Cadastrar" class="botões_geral">
                 </div>
             </form>    
         </main>
         <footer class="rodape_container">
-
+            <h1>©DevMonster</h1>
+            <p>Todos o direitos reservados</p>
+            <p>Este site oferece receitas com fins informativos e educativos. Consulte sempre um profissional de saúde antes de fazer mudanças significativas na sua dieta.</p>
         </footer>
 </body>
 </html>

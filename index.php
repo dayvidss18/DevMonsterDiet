@@ -16,10 +16,10 @@
         <br><br>
         <button>Login</button>
         <br><br>
-        <button>Registrar</button>
+        <button class="botões_geral">Registrar</button>
     </div>
     <footer>
-        
+
     </footer>
     <?php
     
