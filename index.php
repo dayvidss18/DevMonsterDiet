@@ -18,9 +18,11 @@
         <br><br>
         <button>Registrar</button>
     </div>
-    <footer></footer>
+    <footer>
+        
+    </footer>
     <?php
-
+    
     ?>  
 </body>
 </html>
