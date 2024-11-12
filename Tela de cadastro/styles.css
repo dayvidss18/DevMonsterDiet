@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    background-color: white;
+    border: 2px solid #3498db;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    color: #3498db;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
