@@ -8,7 +8,7 @@
 </head>
 <body>
         <header class="">
-            <a href="#"><img src="/images/logo.webp" alt="Logo imagem de um dinossauro" width="100px" heigth="100px"></a>
+            <a href="#"><img src="/images/dino.png" alt="Logo imagem de um dinossauro" width="100px" heigth="100px"></a>
         </header>
         <main>
         <form action="post">
