@@ -77,5 +77,18 @@
             <p>Todos o direitos reservados</p>
             <p>Este site oferece receitas com fins informativos e educativos. Consulte sempre um profissional de saúde antes de fazer mudanças significativas na sua dieta.</p>
         </footer>
+        <?php 
+
+            $dados = [];
+            $nome = $_POST['nome'];
+            $idade = $_POST['idade'];
+            $email = $_POST['email'];
+            $senha1 = $_POST[''];
+            $senha2 = $_POST[''];
+            $senhaUsuario = '';
+            $altura = $_POST[''];
+            $peso = $_POST[''];
+            
+        ?>
 </body>
 </html>
