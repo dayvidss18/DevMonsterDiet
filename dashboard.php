@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="foto-perfil"></div>
-        <div class="info">Nome do Usuário</div>
+        <div class="info">echo $nome</div>
         <div class="info">Idade</div>
         <div class="info">Peso</div>
         <div class="info">Metas</div>
