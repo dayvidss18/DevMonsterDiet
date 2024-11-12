@@ -94,6 +94,10 @@ textarea{
     justify-content: center;
     text-align: center;
 }
-@media screen {
-    
-}
+@media screen and (max-width: 600px) {
+    .container_login {
+        padding: 40px;
+    }
+    .botões_geral {
+        margin: 0.5rem 2rem;
+    }
