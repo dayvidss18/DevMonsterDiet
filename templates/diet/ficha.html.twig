@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevMonster Diet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#">
+            <img src="dino.png" alt="Logo imagem de um dinossauro" width="100px" height="100px">
+        </a>
+    </header>
+    <main>
+        <form action="/add" method="post">
+            <div class="container">
+                <h1>Cadastro</h1>
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" class="input_text"> 
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="input_text">
+
+                <label for="senha1">Senha</label>
+                <input type="password" name="senha1" id="senha1" class="input_text">
+
+                <label for="senha2">Insira Sua Senha Novamente</label>
+                <input type="password" name="senha2" id="senha2" class="input_text">
+
+                <fieldset class="lista_radio">
+                    <legend>Sexo:</legend>
+                    <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+                    <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+                </fieldset>
+
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" name="idade" class="input_text">
+
+                <label for="altura">Altura:</label>
+                <input type="text" id="altura" name="altura" class="input_text">
+
+                <label for="peso">Peso atual:</label>
+                <input type="text" id="peso" name="peso" class="input_text">
+
+                <fieldset class="lista_radio">
+                    <legend>Você é vegetariano ou vegano?</legend>
+                    <label><input type="radio" name="vegetariano" value="sim"> Vegetariano</label>
+                    <label><input type="radio" name="vegetariano" value="vegano"> Vegano</label>
+                    <label><input type="radio" name="vegetariano" value="nao"> Não</label>
+                </fieldset>
+
+                <input type="submit" value="Cadastrar" class="botões_geral">
+            </div>
+        </form>    
+    </main>
+    <footer class="rodape_container">
+        <h1>©DevMonster</h1>
+        <p>Todos o direitos reservados</p>
+        <p>Este site oferece receitas com fins informativos e educativos. Consulte sempre um profissional de saúde antes de fazer mudanças significativas na sua dieta.</p>
+    </footer>
+</body>
+</html>
+
