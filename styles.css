@@ -11,6 +11,10 @@ body{
     background-color: #9e8e8e;
 }
 
+img{
+    border-radius: 50%;
+}
+
 .container{
     display: flex;
     flex-direction: column;
