@@ -10,7 +10,7 @@
     
     <div class="container">
         <div class="foto-perfil"></div>
-        <div class="info">e</div>
+        <div class="info">E-mail</div>
         <div class="info">Idade</div>
         <div class="info">Peso</div>
         <div class="info">Metas</div>
