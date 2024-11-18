@@ -8,8 +8,8 @@
 
     
     class cApi extends AbstractController {
-        #[Route("/add", methods: ["POST"])]
-        public function add(Request $request): Response {
+        #[Route("/register", methods: ["POST"])]
+        public function register(Request $request): Response {
             
             $conn = new \mysqli($_ENV["HOST"], "root", $_ENV["PASSWORD"]);
 
@@ -27,6 +27,7 @@
                     peso FLOAT,
                     imc FLOAT,
                     sexo ENUM("masculino", "feminino")
+                    email VARCHAR(60)
                 )';
                 if(mysqli_query($conn, $sql_query)){
                     $dados = [];
@@ -114,13 +115,44 @@
                 return new Response("200");
             }
             $conn>close();
-
-            
-            
             //echo "Dados: <pre>" . print_r($dados, true) . "</pre><br>";
-            
         }
-    
-            
+        #[Route("/login", methods: ["POST"])]
+        public function login(Request $request): Response {
+            $conn = new \mysqli($_ENV["HOST"], "root", $_ENV["PASSWORD"]);
+
+            if($conn->connect_error){
+                return new Response("500");
+            }else {
+                $sql_query = "USE diet;";
+                mysqli_query($conn, $sql_query);
+                $sql_query = '
+                CREATE TABLE IF NOT EXISTS usuarios (
+                    nome VARCHAR(30),
+                    idade INT,
+                    senha VARCHAR(15),
+                    altura FLOAT,
+                    peso FLOAT,
+                    imc FLOAT,
+                    sexo ENUM("masculino", "feminino"),
+                    email VARCHAR(60)
+                )';
+                if(mysqli_query($conn, $sql_query)){
+                    $email = $request->get("emailLogin");
+                    $senha = $request->get("senhaLogin");
+                    if(isset($email) && isset($senha)){
+                        $sql_query = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+                        $dados = $conn->query($sql_query);
+                        $rows = $dados->num_rows;
+                       return new Response("Encouter rows $rows");
+                    }else {
+                        return new Response("403 $nome $senha");
+                    }
+                }else {
+                    return new Response("Internal Error 500, TABLE IS NO CREATED");
+                }
+            }
+            $conn->close();
+        }
     }
 ?>

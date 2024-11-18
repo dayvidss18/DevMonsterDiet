@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Perfil do Usuário</title>
+</head>
+<body>
+
+        {% for dado in dados %}
+            <div class="container">
+                <div class="foto-perfil"></div>
+                <div class="info"><strong>Nome:</strong>{{dado.nome}}</div>
+                <div class="info"><strong>Idade:</strong>{{dado.idade}}</div>
+                <div class="info"><strong>Metas:</strong>Em Breve</div>
+                <div class="info"><strong>Plano Alimentar:</strong>Em Breve</div>
+            </div>
+        {% endfor %}
+
+</body>
+</html>
