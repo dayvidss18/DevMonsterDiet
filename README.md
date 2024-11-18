@@ -1,5 +1,5 @@
 # Symfony Tests
-Branch Criada para testar o symfony no prpjeto
+Branch Criada para testar o symfony no projeto
 
 # Como Buildar
 - Instale o Composer no site oficial
