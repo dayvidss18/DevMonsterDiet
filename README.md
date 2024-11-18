@@ -1,5 +1,5 @@
 # Symfony Tests
-Branch Criada para testar o symfony no prpjeto
+Branch Criada para testar o symfony no projeto
 
 # Como Buildar
 - Instale o Composer no site oficial
@@ -8,6 +8,7 @@ Branch Criada para testar o symfony no prpjeto
 - Baixe o Symfony Cli
 - Rode usando symfony server:start
 - Para parar o server digite symfony local:server:stop
+<<<<<<< HEAD
 
 # Frontend 
 Todo codigo frontend deve ser feito na pasta https://github.com/dayvidss18/DevMonsterDiet/tree/symfonytest/public para referenciar o style ou script você deve colocar a apenas o nome do arquivo "style.css" ou "script.js" caso tenha alguma pasta digite o "nomepasta/style.css" ou "nomepasta/script.js" caso precisar usar uma biblioteca js ou css ela será incluida no projeto final.
