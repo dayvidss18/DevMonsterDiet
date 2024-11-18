@@ -7,14 +7,13 @@
     <title>Perfil do Usuário</title>
 </head>
 <body>
-    
     <div class="container">
         <div class="foto-perfil"></div>
-        <div class="info">E-mail</div>
-        <div class="info">Idade</div>
-        <div class="info">Peso</div>
-        <div class="info">Metas</div>
-        <div class="info">Plano Alimentar</div>
+        <div class="info"><strong>Nome:</strong> <?php echo $nome; ?></div>
+        <div class="info"><strong>Idade:</strong> <?php echo $idade; ?> anos</div>
+        <div class="info"><strong>Peso:</strong> <?php echo $peso; ?> kg</div>
+        <div class="info"><strong>Metas:</strong> <?php echo $metas; ?></div>
+        <div class="info"><strong>Plano Alimentar:</strong> <?php echo $planoAlimentar; ?></div>
     </div>
 </body>
 </html>
