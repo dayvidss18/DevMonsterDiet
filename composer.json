@@ -14,8 +14,12 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.1.*",
         "symfony/runtime": "7.1.*",
+        "symfony/security-bundle": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
         "symfony/yaml": "7.1.*",
+        "twig/extra-bundle": "^3.15",
+        "twig/string-extra": "^3.15",
+        "twig/twig": "^2.12|^3.0",
         "vlucas/phpdotenv": "^5.6"
     },
     "config": {

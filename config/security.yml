@@ -1,0 +1,8 @@
+security:
+  firewalls:
+    main:
+      anonymous: true
+      form_login: app_login
+      check_path: app_login
+
+  

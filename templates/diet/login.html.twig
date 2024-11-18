@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% extends "base.html.twig" %}
+
+{% block body %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <title>Login</title>
 </head>
-<body>
-    <div class="container_login">
+    
+     <div class="container_login">
         <form action="/login" method="post">
             <h1>Login</h1>
             <input type="text" placeholder="E-mail" id="emailLogin" name="emailLogin" required>
@@ -18,11 +19,9 @@
             <button type="submit">Login</button>
             <br><br>
 
+            <!-- Poderia Deixar bonitinho o email ou senha incorreta pfv ? -->
+            <p class="incorrect">Email ou senha incorreta</p>
         </form>
         <a href="/ficha"><button class="botões_geral">Registrar</button></a>
     </div>
-    <footer>
-    </footer>
-</body>
-</html>
-
+{% endblock %}

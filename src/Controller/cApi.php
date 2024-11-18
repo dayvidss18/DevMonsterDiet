@@ -5,6 +5,7 @@
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\Dotenv\Dotenv;
+    use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
     
     class cApi extends AbstractController {
@@ -118,7 +119,7 @@
             //echo "Dados: <pre>" . print_r($dados, true) . "</pre><br>";
         }
         #[Route("/login", methods: ["POST"])]
-        public function login(Request $request): Response {
+        public function login(Request $request, AuthenticationUtils $authenticationUtils): Response {
             $conn = new \mysqli($_ENV["HOST"], "root", $_ENV["PASSWORD"]);
 
             if($conn->connect_error){
@@ -144,9 +145,13 @@
                         $sql_query = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
                         $dados = $conn->query($sql_query);
                         $rows = $dados->num_rows;
-                       return new Response("Encouter rows $rows");
-                    }else {
-                        return new Response("403 $nome $senha");
+
+                        if($rows <= 0){
+                            $error = $authenticationUtils->getLastAuthenticationError();
+                            return $this->render("diet/login.html.twig", ["error"=>$error ? $error->getMessage(): null]);
+                        }else {
+                            return new Response("Logged");
+                        }
                     }
                 }else {
                     return new Response("Internal Error 500, TABLE IS NO CREATED");
