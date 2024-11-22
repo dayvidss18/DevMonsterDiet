@@ -41,7 +41,7 @@
                     $altura = $request->get("altura");
                     $peso = $request->get("peso");
                     $imc = 0;
-                    $sexo = $request->get("altura");
+                    $sexo = $request->get("sexo");
                     $avaliacaoUsuario = '';
 
                     function verificaSenhaIgual() {
@@ -80,20 +80,32 @@
                             }
                         }
                     }*/
-                    //verificaSenhaIgual();
+                    verificaSenhaIgual();
                     //verificaImc();
 
                     $nome = $nome ?? '';
-                    $senhaUsuario = $senhaUsuario ?? '';
-                    $sexo = $sexo ?? '';
                     $sql_query = "SELECT * FROM usuarios WHERE nome = '$nome'";
 
                     $result = $conn->query($sql_query);
                     if($result->num_rows == 0){
-                        $stmt = $conn->prepare("INSERT INTO usuarios (nome, idade, senha, altura, peso, imc, sexo) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                        $stmt->bind_param("sissdds", $nome, $idade, $senhaUsuario, $altura, $peso, $imc, $sexo);
-                        $stmt->execute();
+                        $stmt = $conn->prepare("INSERT INTO usuarios (nome, idade, senha, altura, peso, imc, sexo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
+                        if ($stmt === false) {
+                            die("Erro ao preparar a consulta: " . $conn->error);
+                        }
+                        
+                        // Corrigindo a string de tipos
+                        $stmt->bind_param("sissddss", $nome, $idade, $senha1, $altura, $peso, $imc, $sexo, $email);
+                        
+                        // Executar a consulta
+                        if (!$stmt->execute()) {
+                            echo "Erro ao inserir usuário: " . $stmt->error;
+                        } else {
+                            echo "Usuário inserido com sucesso!";
+                        }
+                        
+                        // Fechar a declaração
+                        $stmt->close();
                         if(mysqli_query($conn, $sql_query)){
                             return new Response("Internal Error 500, INSERT ERROR");
                         }
@@ -144,7 +156,7 @@
                             $error = $authenticationUtils->getLastAuthenticationError();
                             return $this->render("diet/login.html.twig", ["error"=>$error ? $error->getMessage(): null]);
                         }else {
-                            return $this->render("diet/dashboard.html.twig");
+                            return $this->render("diet/dashboard.html.twig", ["dados"=>$dados]);
                         }
                     }
                 }else {
