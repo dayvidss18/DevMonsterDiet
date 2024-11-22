@@ -27,8 +27,8 @@
                     altura FLOAT,
                     peso FLOAT,
                     imc FLOAT,
-                    sexo ENUM("masculino", "feminino")
-                    email VARCHAR(60)
+                    sexo ENUM("masculino", "feminino"),
+                    email MEDIUMTEXT
                 )';
                 if(mysqli_query($conn, $sql_query)){
                     $dados = [];
@@ -43,13 +43,6 @@
                     $imc = 0;
                     $sexo = $request->get("altura");
                     $avaliacaoUsuario = '';
-                    if ($sexo) {
-                        $sexo = $request->get("sexo");
-                        echo "Sexo selecionado: " . htmlspecialchars($sexo) . "<br>";
-                    } else {
-                        echo "Nenhuma opção de sexo foi selecionada.<br>";
-                        exit();
-                    }
 
                     function verificaSenhaIgual() {
                         global $senha1, $senha2, $senhaUsuario;
@@ -60,7 +53,7 @@
                             exit();
                         }
                     }
-
+                    /*
                     function verificaImc() {
                         global $altura, $peso, $imc, $avaliacaoUsuario, $sexo;
                         $imc = $peso / ($altura * $altura);
@@ -86,34 +79,35 @@
                                 $avaliacaoUsuario = 'Obesidade 1';
                             }
                         }
-                    }
-                    verificaSenhaIgual();
-                    verificaImc();
+                    }*/
+                    //verificaSenhaIgual();
+                    //verificaImc();
 
-                    $dados = [
-                        "nome" => $nome,
-                        "idade" => $idade,
-                        "email" => $email,
-                        "altura" => $altura,
-                        "peso" => $peso,
-                        "imc" => $imc,
-                        "avaliacao" => $avaliacaoUsuario
-                    ];    
-                    $sql_query = "SELECT * FROM usuarios WHERE nome = $nome";
+                    $nome = $nome ?? '';
+                    $senhaUsuario = $senhaUsuario ?? '';
+                    $sexo = $sexo ?? '';
+                    $sql_query = "SELECT * FROM usuarios WHERE nome = '$nome'";
 
                     $result = $conn->query($sql_query);
                     if($result->num_rows == 0){
-                        $sql_query = "INSERT INTO usuarios ($nome, $idade, $senhaUsuario, $altura, $peso, $imc, $sexo)";
+                        $stmt = $conn->prepare("INSERT INTO usuarios (nome, idade, senha, altura, peso, imc, sexo) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                        $stmt->bind_param("sissdds", $nome, $idade, $senhaUsuario, $altura, $peso, $imc, $sexo);
+                        $stmt->execute();
+
                         if(mysqli_query($conn, $sql_query)){
                             return new Response("Internal Error 500, INSERT ERROR");
                         }
                     }
+                    $results = $conn->query($sql_query);
+                    $dados = array();
+                    while($row = $results->fetch_assoc()){    
+                        $dados[] = $row;
+                        return $this->render("diet/dashboard.html.twig", ["dados"=>$dados]);
+                    }
+
                 }else {
                     return new Response("Internal Error 500, TABLE IS NO CREATED");
                 }
-            
-                
-                return new Response("200");
             }
             $conn>close();
             //echo "Dados: <pre>" . print_r($dados, true) . "</pre><br>";
