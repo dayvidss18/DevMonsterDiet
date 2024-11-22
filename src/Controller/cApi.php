@@ -150,7 +150,7 @@
                             $error = $authenticationUtils->getLastAuthenticationError();
                             return $this->render("diet/login.html.twig", ["error"=>$error ? $error->getMessage(): null]);
                         }else {
-                            return new Response("Logged");
+                            return $this->render("diet/dashboard.html.twig");
                         }
                     }
                 }else {
