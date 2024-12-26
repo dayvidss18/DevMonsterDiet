@@ -4,6 +4,31 @@ padding: 0;
 font-family: monospace;
 font-size: 20px;
 }
+.cabecalho{
+    background-color: #9e8e8e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(161, 129, 108, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    border-radius: 15px;
+    box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
+    color: #fff;
+}
+.container_login h1{
+    margin: .3rem 0px;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -11,18 +36,50 @@ font-size: 20px;
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 100%;
-    margin: 0;
-    background-color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #9e8e8e;
+    padding-bottom: 1.2rem;
+}
+body{
+    background-color: #9e8e8e;
+
 }
 img{
     border-radius: 30%;
     box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
     margin: 1rem;
 }
+.dahsboard_tela{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.dashboard_tela_secundario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.dashboard_tela_secundario_item{
+    width: 600px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 6.2rem;
+    box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
 
+}
+.dashboard_tela_secundario_item1{
+    width: 600px;
+    height: 325px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
+
+    
+}
 .dashboard_container{
     display: flex;
     flex-direction: column;
@@ -34,7 +91,8 @@ img{
 }
 
 
-.foto-perfil {
+
+.logo_dashboard {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +112,14 @@ img{
     background-color: #fff;
     color: black;
     padding: .5rem;
+    box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
+
+}
+.btn_gr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 
 .info {
@@ -63,17 +129,7 @@ img{
     margin: 10px 0;
     font-size: 1em;
 }
-.container_login{
-    background-color: rgba(161, 129, 108, 0.9);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 80px;
-    border-radius: 15px;
-    box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
-    color: #fff;
-}
+
 .input_text{
     width: 450px;
     padding: 10px;
@@ -115,7 +171,7 @@ textarea{
     justify-content: center;
     gap: 0.5rem;
     margin: 1rem 0;
-    width: 100%;
+    width: 47%;
     padding: .5rem;
 }
 .botões_geral{
@@ -125,7 +181,6 @@ textarea{
     border-radius: 10px;
     color: white;
     font-size: 15px;
-    margin: 0.5rem 5rem;
     text-align: center;
     box-shadow: 5px 5px rgba(72, 60, 51, 0.9);
     
