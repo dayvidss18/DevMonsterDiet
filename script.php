@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,idade,email,senha,altura,peso,sexo,imc,avaliacaoUsuario) 
     VALUES('$nome','$idade','$email','$senha','$altura','$peso','$sexo','$imc','$avaliacaoUsuario')");
+    header('Location: index.html');
     }
 ?>
 
